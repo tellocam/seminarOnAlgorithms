@@ -1,0 +1,14 @@
+\frametitle{Code}
+\begin{lstlisting}[basicstyle=\ttfamily]
+#include <stdio.h>
+
+int main(void)
+{
+  (void) printf("Hello, C World\n");
+
+  return 0;
+}
+   \end{lstlisting}
+
+   Note: Don't forget to mark the frames using listings with
+   \lstinline[columns=fixed]{[fragile]}.
