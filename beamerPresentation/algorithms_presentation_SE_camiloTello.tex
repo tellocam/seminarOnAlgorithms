@@ -4,9 +4,9 @@
 % You have to install the theme first!
 
 % corporate design of TU Wien
-\usetheme[font=liberation]{tuw}
+\usetheme[font=gulliver]{tuw} 
 % background "TU main building" on title page
-%\usetheme[tuw_background]{tuw}
+%\usetheme[tuw_background]{tuw} 
 % individual background on title page
 %\usetheme[tuw_image=TU_Background]{tuw}
 % white logo if you have a dark background image
@@ -18,14 +18,18 @@
 %\usetheme[tuw_frametitletotop]{tuw}
 
 % if you use german umlaute use T1 encoding:
-%\usepackage[T1]{fontenc}
+%\usepackage{fontenc}
 % default Latex fonts are not T1 supported -> bitmaps used, this is not nice on
 % screen; you can use the lmodern package instead
-%\usepackage{lmodern}
+\usepackage{lmodern}
 \usepackage[utf8]{inputenc}
 \usepackage{listings}
 \usepackage{booktabs}
 \usepackage{url}
+\usepackage[style=ieee]{biblatex}
+\addbibresource{references.bib}
+\renewcommand*{\bibfont}{\scriptsize}     %%attributes the footnotesize to the bibliography font.
+
 
 %%% title page settings
 \title[Seminar on Algorithms]{%
@@ -68,9 +72,9 @@ with Intervals}
   \framesubtitle{Title second category}
   % no deeper title hierarchy provided
 
-  Donec suscipit luctus lacus ut viverra. Proin molestie eros tellus, vitae
-  elementum nulla fringilla nec. Pellentesque facilisis, elit ac egestas
-  gravida, ante leo euismod velit, et suscipit est ex ut ex.
+  Lets see if the citation works in this part \cite{main_paper}. The second paper I use
+  should appear in the bibliograph now \cite{kernel_estimation_1} and the third one as well
+  \cite{kernel_estimation_2}.
 
   You can cite~\cite{Tan11}. Urls look like this: \url{http://www.google.com/}.
 \end{frame}
@@ -201,17 +205,13 @@ int main(void)
     So I've added some more blah blah. Lorem ipsum whatever.}.
 \end{frame}
 
+
+
 \section{References}
 \begin{frame}{References}
-  You can add references like in a LaTeX article.
 
-  \begin{thebibliography}{10}
-  \bibitem{vertexColorPaper}[1] D. Durrman and E. Saule, "Coloring the Vertices of 9-pt and 27-pt Stencils with Intervals," 2022 IEEE International Parallel and Distributed Processing Symposium (IPDPS), Lyon, France, 2022, pp. 963-973, doi: 10.1109/IPDPS53621.2022.00098.
+  \tiny\printbibliography
   
-  \bibitem{beamerTemplate}[2] D. Ratasich, M. Bachl, M. Platzer and C. Hirsch, "TU Wien LaTeX Beamer Theme -
-  Template from git repository" 
-  \url{https://github.com/tuw-cpsg/tuw-latex-beamer-theme}
-  \end{thebibliography}
 \end{frame}
 
 
