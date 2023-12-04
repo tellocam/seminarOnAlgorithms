@@ -1,6 +1,6 @@
 \section{Interval Vertex Coloring (IVC)}
-
-\begin{frame}{Vertex Coloring Problem}
+\subsection{Vertex Color Problem}
+\begin{frame}{VCP}
   \begin{columns}
     \column{.6\textwidth}
       \begin{itemize}
@@ -14,50 +14,83 @@
       
     \column{.4\textwidth}
     \centering
-      \null
-    \includegraphics[width=\textwidth]{figures/graph_coloring.png}
+    
+    
     \null
     \centering
       G(V,E)
+      \null
+      \includegraphics[width=0.8\textwidth]{figures/graph_coloring1.png}<1->
+      \null
+      \null
+      \onslide<4->{Colored G(V,E)}
+      \null
+      \includegraphics[width=0.8\textwidth]{figures/graph_coloring.png}<4->
   \end{columns}
 \end{frame}
 
-\begin{frame}{Interval Vertex Coloring (IVC)}
+\subsection{Interval Vertex Coloring Problem}
+\begin{frame}{IVC}
   \begin{columns}
     \column{.4\textwidth}
-        \includegraphics[width=1\textwidth]{figures/ICV0.pdf}<1->
-        \includegraphics[width=1\textwidth]{figures/ICV1.pdf}<5->
+        \centering
+        G(V,E) \\
+        \null
+        \includegraphics[width=1\textwidth]{figures/ICV0.pdf}<1-> \\
+
     \column{.6\textwidth}
     \begin{itemize}
-    \item<1-> Let G(V,E) be an undirected graph and $w : V \mapsto \mathbb{Z^+}$
-    \item<2-> Vertex v is colored with open interval:
+      \item<1-> Let G(V,E) be an undirected graph and $w : V \mapsto \mathbb{Z^+}$ the weights.
+      \null
+      \vfill
+      \null
+      \item<2-> A interval coloring of the vertices of G is a function $\text{start} : V \mapsto \mathbb{Z^+}$
+      \null
+      \vfill
+      \null
+      \item<3-> Vertex v is colored with open interval:
+      $[\text{start}(v), \text{start}(v)+w(v))$
+      \null
+      \vfill
+      \null
+      \item<4-> Neighboring Vertices must have disjoint color intervals: 
+      $\forall (a, b) \in E:$ \\
+      $ [\text{start}(a), \text{start}(a) + w(a)) \cap [\text{start}(b), \text{start}(b) + w(b)) = \emptyset.$
+      
     \end{itemize}
-    \begin{block}{Vertex v is colored with open interval}<3->
-      $[\text{s}(v), \text{s}(v)+w(v))$
-    \end{block}
-    \begin{block}{Neighboring Vertices must have disjoint color interval}<4->
-      $\forall (a, b) \in E, [s(a), s(a) + w(a)) \cap [s(b), s(b) + w(b)) = \emptyset.$
-    \end{block}    
   \end{columns}
 \end{frame}
 
 \begin{frame}{Formal IVC Problem Definition}
-  \begin{block}{Definition:}
-    A particular coloring start of G(V,E) is said to use 
-    \[ \text{maxcolor}= \max_{v \in V} s(v) + w(v) \hspace{1cm}  \text{colors.}\] 
-  \end{block}
+  \begin{columns}
+    \column{.4\textwidth}
+        \centering
+        \onslide<3->{Interval Colored G(V,E) with maxcolor = 25} \\
+        \null
+        \includegraphics[width=1\textwidth]{figures/ICV1.pdf}<3->
+    \column{.6\textwidth}
+    \begin{itemize}
+      \item<1-> A interval coloring of the vertices of G is a function $\text{start} : V \mapsto \mathbb{Z^+}$
+      \null
+      \vfill
+      \null
+      \item<2-> A particular coloring "start" of the vertices of G is said to use:
+      \[ \text{maxcolor}= \max_{v \in V} start(v) + w(v) \hspace{0.25cm}  \text{colors.}\]
+    \end{itemize}
+      \begin{block}{Optimization Problem Instance:}<4->
+        Find a coloring $\text{start}:V \mapsto \mathbb{Z}^+$ that minimizes maxcolor. \\
+      \end{block}
+      \null
+      \vfill
+      \null
+    \begin{itemize}
+      \item<4-> A maxcolor that is indeed minimal, is denoted with maxcolor* .
+    \end{itemize}
 
-  \begin{block}{Optimization Problem Instance:}
-    Find a coloring $\text{start}:V \mapsto \mathbb{Z}^+$ that minimizes maxcolor.
-  \end{block}
-
-  \begin{block}{Definition}
-    The optimal value of maxcolor, i.e. one that comes from a valid minimizer function start,
-    is denoted with maxcolor*.
-    
-  \end{block}
-  
+  \end{columns}
 \end{frame}
+  
+
   % \begin{frame}
   %   \begin{columns}[c]
 
