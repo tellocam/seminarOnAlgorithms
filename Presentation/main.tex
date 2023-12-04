@@ -1,0 +1,57 @@
+\documentclass{beamer}
+
+\usetheme[font=gulliver]{tuw} 
+
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage[style=ieee]{biblatex}
+\addbibresource{content/references.bib}
+\renewcommand*{\bibfont}{\scriptsize}     %%attributes the footnotesize to the bibliography font.
+
+%%% title page settings
+\title[Seminar on Algorithms]{%
+  184.754 Seminar on Algorithms 
+}
+\subtitle{Paper: Coloring the Vertices of 9-pt and 27-pt Stencils
+with Intervals}
+\author{Camilo Tello Fachin}
+\date{\today}
+
+%%% slides start here
+\begin{document}
+
+% first frame must include the title page!
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% table of contents if you have a long presentation (uses 'part' and 'section'
+% elements)
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+
+\input{content/introduction.tex}
+
+\input{content/section1.tex}
+
+\input{content/section2.tex}
+
+\input{content/section3.tex}
+
+\input{content/section4.tex}
+
+\input{content/section5.tex}
+
+\section{References}
+\begin{frame}{References}
+
+  \tiny\printbibliography
+  
+\end{frame}
+
+
+\end{document}
