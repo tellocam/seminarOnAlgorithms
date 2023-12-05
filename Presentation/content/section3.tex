@@ -1,4 +1,52 @@
 \section{Heuristics}
-  \begin{frame}{Heuristics}
-    Still to do..
+
+\subsection{NP - Completeness}
+
+  \begin{frame}{3DS-IVC $\in$ NP ?}
+    \begin{Lemma}<1->
+      3DS-IVC $\in$ NP
+    \end{Lemma}
+  \begin{block}{Proof.}<2->
+    \only<2->{
+    Given a solution for 3DS-IVC, encoded with pairs of integers which are bounded between 0 and
+    $\sum_{v \in V} w(v_i)$ $\mapsto$ a solution in polynomial space. \\}
+    \only<3->{
+    Verify that no adjacent edges have overlapping intervals. $\forall (u, v) \in E:$
+    \[ \left[ \text{{start}}(u), \text{{start}}(u) + w(u) \right) \cap \left[ \text{{start}}(v), \text{{start}}(v) + w(v) \right) = \emptyset. \]
+    }
+    \only<4->{
+      Since $|E| \leq \frac{n(n-1)}{2}$ and checking if two intervals overlap is in $\mathcal{O}(1)$,
+      the verification can be done in $\mathcal{O}(n^2)$ \qed.
+    }
+  \end{block}
   \end{frame}
+
+  \begin{frame}{NAE-3SAT $\propto$ 3DS-IVC ?}
+    \begin{block}{Idea of Proof}
+      \begin{itemize}
+        \item<1-> Construct an instance 3DS-IVC from an instance of NAE-3SAT in polynomial time. \\
+        \item<2-> Verify that a positive instance of NAE-3SAT results in a positive instance of 3DS-IVC.\\
+        \item<3-> Verify that if the created instance of 3DS-IVC is positive, then the instance of NAE3-SAT is also positive.\\
+      \end{itemize}
+    \only<3->{
+    Since the 3DS-IVC problem is in NP and is harder than NAE-3SAT which is an NP-Complete problem,
+    3DS-IVC is NP-Complete \qed .
+    }
+      
+    \end{block}
+    \only<4->{
+      The proof yields:
+      \begin{theorem}
+        Deciding whether a 27-pt stencil can be colored with less than $k$ colors is NP-Complete. \cite{main_paper}
+      \end{theorem}
+    }
+  \end{frame}
+
+  \subsection{Algorithms}
+  \begin{frame}{Algorithms}
+    \begin{lemma}
+      
+    \end{lemma}
+    
+  \end{frame}
+
