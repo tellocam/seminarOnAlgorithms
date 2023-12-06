@@ -1,46 +1,46 @@
 \section{Special Case Analysis}
 
-\subsection{Definitions}
+\subsection{Definitions for Analysis}
 
-\begin{frame}{Definitions}
-  % Its an empty frame to keep latex from compiling the movie!
-  \begin{columns}[T]
+\begin{frame}{Definitions for Analysis}
+  Its an empty frame to keep latex from compiling the movie!
+  % \begin{columns}[T]
 
-    \column{0.5\textwidth}
+  %   \column{0.5\textwidth}
 
-      \only<1->{
-        \begin{block}{Definition: 2D Stencil Interval Vertex Coloring (2DS-IVC)}<1->
-          A problem where \( G \) is a \( 9 \)-pt \( 2D \) stencil, 
-          composed of \( X \times Y \) vertices on a \( 2D \) grid such that two vertices \( (i, j) \) 
-          and \( (i', j') \) are connected iff \( |i - i'| \leq 1 \) and \( |j - j'| \leq 1 \).
-        \end{block}
-      }
-      \null
-      \centering
-      \only<2->{
-        \includegraphics[width=0.5\textwidth]{figures/9pt_stencil_graph.pdf}<2->
-      }
+  %     \only<1->{
+  %       \begin{block}{Definition: 2D Stencil Interval Vertex Coloring (2DS-IVC)}<1->
+  %         A problem where \( G \) is a \( 9 \)-pt \( 2D \) stencil, 
+  %         composed of \( X \times Y \) vertices on a \( 2D \) grid such that two vertices \( (i, j) \) 
+  %         and \( (i', j') \) are connected iff \( |i - i'| \leq 1 \) and \( |j - j'| \leq 1 \).
+  %       \end{block}
+  %     }
+  %     \null
+  %     \centering
+  %     \only<2->{
+  %       \includegraphics[width=0.5\textwidth]{figures/9pt_stencil_graph.pdf}<2->
+  %     }
 
-      \null
-      \null
-      \null
-      \null
+  %     \null
+  %     \null
+  %     \null
+  %     \null
 
 
-    \column{0.5\textwidth}
-        \only<3->{
-          \begin{block}{Definition: 3D Stencil Interval Vertex Coloring (3DS-IVC)}
-            A problem where \( G \) is a 27-point \( 3D \) stencil, 
-            composed of \(X \times Y \times Z\) vertices on a 3D grid such that two vertices 
-            \( (i, j, k) \) and \( (i', j', k') \) are connected iff \( |i - i'| \leq 1 \), \( |j - j'| \leq 1 \), and
-            \( |k - k'| \leq 1 \).
-          \end{block}
-        }
-      \centering
-      \only<4->{%
-        \animategraphics[loop,width=0.8\textwidth, autoplay]{30}{figures/animation_27pt/output_}{0001}{180}
-      }
-  \end{columns}
+  %   \column{0.5\textwidth}
+  %       \only<3->{
+  %         \begin{block}{Definition: 3D Stencil Interval Vertex Coloring (3DS-IVC)}
+  %           A problem where \( G \) is a 27-point \( 3D \) stencil, 
+  %           composed of \(X \times Y \times Z\) vertices on a 3D grid such that two vertices 
+  %           \( (i, j, k) \) and \( (i', j', k') \) are connected iff \( |i - i'| \leq 1 \), \( |j - j'| \leq 1 \), and
+  %           \( |k - k'| \leq 1 \).
+  %         \end{block}
+  %       }
+  %     \centering
+  %     \only<4->{%
+  %       \animategraphics[loop,width=0.8\textwidth, autoplay]{30}{figures/animation_27pt/output_}{0001}{180}
+  %     }
+  % \end{columns}
 \end{frame}
 
 \subsection{Special Cases}
@@ -52,7 +52,7 @@
   \end{theorem}
 
   \begin{itemize}
-    \item<2-> One can build such a coloring by listing vertices in descending order of weights and
+    \item<2-> There exists such a coloring by listing vertices in descending order of weights and
     greedily allocating the color inteveral with the lowest available start(v) with $\mathcal{O}(n)$ \qed .
 
     \item<3-> Particularly important result since the 2D-IVC's and 3D-IVC's are composed of $K_4$'s and $K_8$'s
@@ -64,14 +64,14 @@
 \end{frame}
 
 \begin{frame}{Bipartite Graphs}
-  \begin{definition}<1->
-    A graph G(V,E) is considered Bipartite iff its vertices can be partitioned into
+  \begin{Theorem}<1->
+    A graph G(V,E) is Bipartite iff it contains no odd cycles. In other words: its vertices can be partitioned into
     two sets A and B, such that all edges have one endpoint in A and the other in B.
-  \end{definition}
+  \end{Theorem}
 
   \begin{itemize}
     \item<2-> All edges provide trivial lower bound: $ \text{maxcolor*} \ge  w(i) + w(j), \forall (i, j) \in E.$
-    \item<3-> One can find a coloring \\ 
+    \item<3-> There exists a coloring \\ 
     $\text{maxcolor*} = \max_{(i,j) \in E} w(i) + w(j)$ in $\mathcal{O}(|E|)$. (Proof Omitted)
     \item<4-> Another important result, since the 9-pt stencil contains a Bipartite 5-pt stencil and the
     27-pt stencil constains at least a Bipartite 7-pt stencil, and all paths are Bipartite.
@@ -106,7 +106,7 @@
   \end{definition}
 
   \begin{theorem}<3->
-    Let G be an odd cycle, then there holds:
+    Let G be an odd cycle, then it holds:
     \[ \text{maxcolor*} = \text{max}(\text{maxpair, minchain3}) \]
   \end{theorem}
 

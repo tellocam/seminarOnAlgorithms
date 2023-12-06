@@ -1,5 +1,18 @@
 \section{Introduction}
 
-\begin{frame}{Intro Slide}
-    Still to do..
+\begin{frame}{Introduction}
+    \begin{overlayarea}{\textwidth}{\textheight}
+        \begin{block}{Connection between VCP and Parallel Algorithms}<1->
+            \begin{itemize}
+                \item<2-> Processors could be colors while the vertices could be tasks. \\
+                \item<3-> What if tasks are not equally computationally expensive? \\
+                \item<4-> $\, \mapsto $ add weights $\propto$ cost and solve IVCP! \\
+                \item<5-> If weights are good estimate, better performance.
+                \item<6-> optimal (minimal) colorings in such an application, can lead to runtime improvement
+                $\propto$ degree of parallelism. \\
+                \item<7-> Unfortunately problem is NP-Complete, heuristics are required for large instances
+                to get useful solutions.
+            \end{itemize}
+        \end{block}
+    \end{overlayarea}
 \end{frame}
