@@ -50,7 +50,62 @@
 \end{frame}
 
 \subsection{Algorithms}
-\begin{frame}{Algorithms}
-  1
+\begin{frame}{Algorithms: Bipartite Decomposition}
+  \begin{block}<1->{Recall: Theorem}
+    For bipartite graphs there exists a coloring \\ 
+  $\text{maxcolor*} = \max_{(i,j) \in E} w(i) + w(j)$ attainable in $\mathcal{O}(|E|)$.
+  \end{block}
+
+  \begin{definition}<2->
+    Let $c(x, y)$ be the lower end of the
+    color interval associated with vertex $(x, y)$ in that coloring.
+    And let $\text{RC} = \max c(x, y) + w(x, y)$ be the maximum color used by any of the rows.
+  \end{definition}
+
+  \begin{corollary}<3->
+    RC $\leq$ maxcolor* is a lower bound of the optimal number of colors of the instance since it is the
+    optimal coloring of a subgraph of the original instance.
+  \end{corollary}
+
 \end{frame}
+
+\begin{frame}{Algorithms: Bipartite Decomposition}
+  \only<1->{
+  \begin{algorithm}[H]
+    \TitleOfAlgo{Bipartite Decomposition}
+    \scriptsize
+    \SetAlgoNlRelativeSize{0}
+    
+    % \caption*{Algorithm: Bipartite Decomposition}
+    
+    \KwData{2DS-IVC instance with Y rows}
+    \KwResult{Approximate coloring with at most \(2 \cdot \text{maxcolor}^*\)}
+    
+    \For{each row $r$ in the 2DS-IVC instance}{
+        \If{$r$ is even}{
+            Color the chain of vertices in row $r$ optimally using colors from $[0, RC)$\;
+        }
+        \Else{
+            Color the chain of vertices in row $r$ optimally using colors from $[RC, 2RC)$\;
+        }
+    }
+    
+    \Return{Approximate coloring with at most \(2 \cdot \text{maxcolor}^*\)}
+    
+    \end{algorithm}
+    
+  }
+
+    \begin{theorem}<2->
+      Since the coloring obtained by the algorithm is at most $2 \cdot \text{maxcolor}^*$, the Bipartite Decomposition is a 2-approximation
+      algorithm for 2DS-IVC. \cite{main_paper}
+    \end{theorem}
+
+    \begin{theorem}<3->
+      the Bipartite Decomposition is a 4-approximation algorithm for 3DS-IVC. (same approach) \cite{main_paper}
+    \end{theorem}
+
+\end{frame}
+
+
 

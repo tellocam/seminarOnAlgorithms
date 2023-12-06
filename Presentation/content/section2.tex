@@ -3,44 +3,39 @@
 \subsection{Definitions for Analysis}
 
 \begin{frame}{Definitions for Analysis}
-  Its an empty frame to keep latex from compiling the movie!
-  % \begin{columns}[T]
+  % It's an empty frame to keep LaTeX from compiling the movie!
+  \begin{overlayarea}{\textwidth}{.8\textheight}
+    \begin{columns}[T]
 
-  %   \column{0.5\textwidth}
+      \begin{column}{0.5\textwidth}
+        \begin{block}{Definition: 2D Stencil Interval Vertex Coloring (2DS-IVC)}<1->
+          A problem where \( G \) is a \( 9 \)-pt \( 2D \) stencil, 
+          composed of \( X \times Y \) vertices on a \( 2D \) grid such that two vertices \( (i, j) \) 
+          and \( (i', j') \) are connected iff \( |i - i'| \leq 1 \) and \( |j - j'| \leq 1 \).
+        \end{block}
+        \centering
+        \visible<2->{
+          \vspace{1.1cm}
+          \includegraphics[width=0.4\linewidth]{figures/9pt_stencil_graph.pdf}<2->
+          \vfill
+        }
+      \end{column}
 
-  %     \only<1->{
-  %       \begin{block}{Definition: 2D Stencil Interval Vertex Coloring (2DS-IVC)}<1->
-  %         A problem where \( G \) is a \( 9 \)-pt \( 2D \) stencil, 
-  %         composed of \( X \times Y \) vertices on a \( 2D \) grid such that two vertices \( (i, j) \) 
-  %         and \( (i', j') \) are connected iff \( |i - i'| \leq 1 \) and \( |j - j'| \leq 1 \).
-  %       \end{block}
-  %     }
-  %     \null
-  %     \centering
-  %     \only<2->{
-  %       \includegraphics[width=0.5\textwidth]{figures/9pt_stencil_graph.pdf}<2->
-  %     }
+      \begin{column}{0.5\textwidth}
+        \begin{block}{Definition: 3D Stencil Interval Vertex Coloring (3DS-IVC)}<3->
+          A problem where \( G \) is a 27-point \( 3D \) stencil, 
+          composed of \(X \times Y \times Z\) vertices on a 3D grid such that two vertices 
+          \( (i, j, k) \) and \( (i', j', k') \) are connected iff \( |i - i'| \leq 1 \), \( |j - j'| \leq 1 \), and
+          \( |k - k'| \leq 1 \).
+        \end{block}
+        \centering
+        \only<4->{
+          \animategraphics[loop,width=0.8\linewidth, autoplay]{30}{figures/animation_27pt/output_}{0001}{180}
+        }
+      \end{column}
 
-  %     \null
-  %     \null
-  %     \null
-  %     \null
-
-
-  %   \column{0.5\textwidth}
-  %       \only<3->{
-  %         \begin{block}{Definition: 3D Stencil Interval Vertex Coloring (3DS-IVC)}
-  %           A problem where \( G \) is a 27-point \( 3D \) stencil, 
-  %           composed of \(X \times Y \times Z\) vertices on a 3D grid such that two vertices 
-  %           \( (i, j, k) \) and \( (i', j', k') \) are connected iff \( |i - i'| \leq 1 \), \( |j - j'| \leq 1 \), and
-  %           \( |k - k'| \leq 1 \).
-  %         \end{block}
-  %       }
-  %     \centering
-  %     \only<4->{%
-  %       \animategraphics[loop,width=0.8\textwidth, autoplay]{30}{figures/animation_27pt/output_}{0001}{180}
-  %     }
-  % \end{columns}
+    \end{columns}
+  \end{overlayarea}
 \end{frame}
 
 \subsection{Special Cases}
