@@ -47,13 +47,13 @@
   \end{theorem}
 
   \begin{itemize}
-    \item<2-> There exists such a coloring by listing vertices in descending order of weights and
-    greedily allocating the color inteveral with the lowest available start(v) with $\mathcal{O}(n)$ \qed .
+    \item<2-> There exists such a coloring by greedily allocating the color inteveral with the lowest 
+    available start(v) with $\mathcal{O}(n)$ \qed .
 
     \item<3-> Particularly important result since the 2D-IVC's and 3D-IVC's are composed of $K_4$'s and $K_8$'s
     respectively.
 
-    \item<4-> Therefore any identified $K_4$ in a 2D-IVC Problem and any $K_8$ in a 3D-IVC Problem are immediately
+    \item<4-> Therefore any identified $K_4$ in a 2D-IVC Problem and any $K_8$ in a 3D-IVC Problem are 
     (lose) lower bounds on maxcolor.
   \end{itemize}
 \end{frame}
@@ -91,8 +91,8 @@
 \begin{frame}{Odd Cycles 2}
   
   \begin{definition}<1->
-    Let maxpair be the maximal sum of any two consecutive vertices. \footnotemark
-    \[ \text{maxpair} = \max_i w(i, i + 1) \]
+    Let maxpair be the maximal sum of any two consecutive vertices. \footnotemark[1] \footnotemark[2]
+    \[ \text{maxpair} = \max_i w(i, i + 1) \] 
   \end{definition}
 
   \begin{definition}<2->
@@ -105,7 +105,8 @@
     \[ \text{maxcolor*} = \text{max}(\text{maxpair, minchain3}) \]
   \end{theorem}
 
-  \footnotetext{Here G is cycle, neighbors of vertex $x$ are $x+1$ and $x-1$.}
+  \footnotetext[1]{Here G is cycle, neighbors of vertex $x$ are $x+1$ and $x-1$.}
+  \footnotetext[2]{The notation $w(x)$ is slightly abused s.t. $w(a,b,c) = w(a) + w(b) + w(c)$}
 \end{frame}
 
 \begin{frame}{Odd Cycles 3}
